@@ -1,0 +1,14 @@
+// device size
+$mobile-size: 640px;
+$max-mobile-size: calc($tablet-size - 1);
+$tablet-size: 768px;
+$max-tablet-size: calc($laptop-size - 1);
+$laptop-size: 1024px;
+$max-laptop-size: calc($screen-size - 1);
+$screen-size: 1280px;
+$max-screen-size: calc($lg-screen-size - 1);
+$lg-screen-size: 1536px;
+
+// color
+$white: white;
+$dark: black;

@@ -1,0 +1,90 @@
+body {
+  background: url('~@/assets/images/common/bg.png') $dark;
+  @apply bg-contain;
+  @apply bg-center;
+}
+
+.container {
+  padding-top: 30%;
+  min-height: calc(100vh - 30px);
+  @apply relative;
+  @apply m-auto;
+  @apply text-center;
+  @apply mb-8;
+  @media screen and (min-width: $tablet-size) {
+    padding-top: 8%;
+  }
+}
+
+.content_title {
+  @apply text-3xl;
+  @apply pb-5;
+  @apply tracking-wide;
+  @apply font-bold;
+  @media screen and (min-width: $tablet-size) {
+    @apply text-4xl;
+  }
+}
+
+.content_main {
+  @apply text-lg;
+  @apply text-left;
+  @apply text-justify;
+  @apply pb-5;
+}
+
+.button {
+  @apply cursor-pointer;
+  @apply outline-none;
+  @apply relative;
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(90deg, rgba(252, 211, 77, 1) 0%, rgba(245, 158, 11, 1) 100%);
+  box-shadow: 12px 12px 24px rgba(245, 158, 11, .64);
+  transition: all 0.3s ease-in-out 0s;
+  &:before {
+    content: '';
+    @apply rounded-full;
+    @apply absolute;
+    @apply opacity-0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 6px solid rgba(245, 158, 11, 0.64);
+    transition: all .3s ease-in-out 0s;
+  }
+  &:focus,
+  &:hover {
+    color: #313133;
+    transform: translateY(-6px);
+    &::before {
+      @apply opacity-100;
+    }
+  }
+  &:after {
+    content: '';
+    @apply absolute;
+    @apply rounded-full;
+    @apply pointer-events-none;
+    border: 6px solid rgba(245, 158, 11, .64);
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1s infinite;
+  }
+}
+
+// Animation
+// Radar
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
